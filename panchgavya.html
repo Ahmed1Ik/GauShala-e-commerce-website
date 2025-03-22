@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Services: Panch Gavya</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons --->
+  <link href="assets/img/favicon.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      color: #1d863a;
+    }
+
+    a {
+      color: #1d863a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #155724;
+    }
+
+    .btn-primary {
+      background-color: #1d863a;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: #155724;
+    }
+
+    /* Header */
+    #header {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1d863a;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar ul li {
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .navbar ul li a {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    .navbar ul li a:hover {
+      color: #155724;
+    }
+
+    .navbar ul li .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      min-width: 200px;
+      border-radius: 5px;
+    }
+
+    .navbar ul li .dropdown-menu li {
+      margin: 0;
+    }
+
+    .navbar ul li .dropdown-menu li a {
+      padding: 10px 20px;
+      color: #333;
+    }
+
+    .navbar ul li .dropdown-menu li a:hover {
+      background: #f8f9fa;
+    }
+
+    .navbar ul li:hover .dropdown-menu {
+      display: block;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .navbar ul li {
+        margin: 0;
+      }
+
+      .navbar ul li a {
+        padding: 15px 20px;
+      }
+
+      .navbar ul li .dropdown-menu {
+        position: static;
+        box-shadow: none;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navbar.active ul {
+        display: flex;
+      }
+    }
+
+    /* Breadcrumbs Section */
+    .breadcrumbs {
+      padding: 20px 0;
+      background: #f8f9fa;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumbs h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1d863a;
+    }
+
+    .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .breadcrumbs ol li + li {
+      padding-left: 10px;
+    }
+
+    .breadcrumbs ol li + li::before {
+      content: "/";
+      padding-right: 10px;
+      color: #6c757d;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 20px 0;
+    }
+
+    .main-content h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1d863a;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .main-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .main-content .btn-primary {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      max-width: 200px;
+    }
+
+    /* Footer */
+    #footer {
+      background: #1d863a;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    #footer h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #footer p {
+      font-size: 14px;
+    }
+
+    #footer .social-links a {
+      color: #fff;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    #footer .social-links a:hover {
+      color: #ddd;
+    }
+
+    #footer .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #footer .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    #footer .footer-links ul li a {
+      color: #fff;
+    }
+
+    #footer .footer-links ul li a:hover {
+      color: #ddd;
+    }
+
+    #footer .copyright {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Header -->
+  <header id="header" class="sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1>Baba Bharathhari Ji Gaushala</h1>
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="panchgavya.html">Panch Gavya</a></li>
+              <li><a href="veg.html">Organic Vegetables</a></li>
+              <li><a href="fertilizer.html">Fertilizer</a></li>
+              <li><a href="havandhoop.html">Havan Dhoop</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="Gallery.html">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="contactus.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Members</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="Social.html">Social Members</a></li>
+              <li><a href="society.html">Society Members</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs Section -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Services</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Services</li>
+          <li>Panch Gavya</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main">
+    <div class="container main-content">
+      <h1>Panch Gavya</h1>
+      <p>
+        Panchagavya or panchakavyam is a mixture used in traditional Hindu rituals that is prepared by mixing five ingredients. 
+        The three direct constituents are cow dung, urine, and milk; the two derived products are curd and ghee. 
+        These are mixed and then allowed to ferment. The Sanskrit word panchagavya means "five cow-derivatives". 
+        When used in Ayurvedic medicine, it is also called cowpathy.
+      </p>
+      <a href="https://en.wikipedia.org/wiki/Panchagavya" class="btn btn-primary">Read More</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h3>Gaushala</h3>
+          <p>
+            Kutheda Kherla <br>
+            Teh. Amb Distt. Una<br>
+            Himachal Pradesh<br><br>
+            <strong>Phone:</strong> 7018606101<br>
+            <strong>Email:</strong> Officialgaushala@gmail.com<br>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="Gallery.html">Gallery</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="havandhoop.html">Havan Dhoop</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="panchgavya.html">Panch Gavya</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="fertilizer.html">Fertilizer</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="veg.html">Organic Vegetables</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Social Networks</h4>
+          <div class="social-links">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Baba Bharathhari Nath Ji Gaushala</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">SAHIL KUMAR & PRINCE RANA</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Toggle Navbar Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navbar = document.querySelector('#navbar');
+
+      mobileNavToggle.addEventListener('click', function () {
+        navbar.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
