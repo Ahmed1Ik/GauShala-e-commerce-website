@@ -1086,12 +1086,12 @@
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .product-grid {
+    .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(138px, 2fr));
         gap: 2px;
         padding: 0px;
     }
-}
+
 
     .product-card {
         padding: 10px;
@@ -2173,6 +2173,44 @@
 
   // Initialize the cart
   Cart.init();
+});
+
+// Category Filter functionality
+$(document).ready(function() {
+    // Get all filter buttons
+    const filterBtns = $('.filter-btn');
+    
+    // Handle filter button clicks
+    filterBtns.on('click', function() {
+        // Remove active class from all buttons
+        filterBtns.removeClass('active');
+        // Add active class to clicked button
+        $(this).addClass('active');
+        
+        // Get the filter value
+        const filterValue = $(this).data('filter');
+        
+        // Show/hide products based on category
+        $('.product-card').each(function() {
+            const category = $(this).data('category');
+            if (filterValue === 'all' || category === filterValue) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+
+        // Show/hide section headings based on filter
+        if (filterValue === 'all') {
+            $('#vegetables-section, #dairy-section').show();
+        } else if (filterValue === 'vegetables') {
+            $('#vegetables-section').show();
+            $('#dairy-section').hide();
+        } else if (filterValue === 'dairy') {
+            $('#vegetables-section').hide();
+            $('#dairy-section').show();
+        }
+    });
 });
 
 // Mobile Menu Toggle
