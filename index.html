@@ -32,6 +32,68 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    
+    /*not specified (testing)*/
+
+.carousel-css{
+  height: 4rem;
+  width:4rem;
+}
+
+.w-11\/123 {
+    width: 91.666667%;
+    padding: 0rem;
+    bottom: 0.6rem;
+}
+    .footer-s{
+      background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
+    }
+    .bg-green-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
+    width: 8.9rem;
+    height: 13rem;
+}
+
+p-6 {
+    padding: 0.3rem;
+}
+.px-6 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 2.2rem;
+    font-size: 0.6rem;
+    font-weight: 400;
+    padding: 7px;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    margin-top: 0.5rem !important;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+@media (max-width: 1024px) {
+    .text-2xl {
+        font-size: 0.9rem !important;
+    }
+}
+.donation {
+    --tw-bg-opacity: 1;
+    background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
+    width: 100%;
+    height: 50%;
+}
+    /* ^ not specified (testing)*/
+
     #hamburger-btn {
       position: relative;
       z-index: 70;
@@ -47,10 +109,11 @@
     .content-details {
       background: rgba(29, 134, 58, 0.9);
       transition: all 0.3s ease;
+      width:14rem
     }
 
     .content:hover .content-details {
-      background: rgba(21, 87, 36, 0.9);
+      background: transparent;
     }
 
     .mobile-nav-toggle {
@@ -92,7 +155,7 @@
 
       /* Cards and grid adjustments */
       .grid {
-        grid-template-columns: repeat(1, 1fr) !important;
+        grid-template-columns: repeat(2, 2fr) !important;
       }
 
       /* Notifications board */
@@ -411,7 +474,7 @@
       </div>
       <!-- Fixed Caption that stays on top of all slides -->
       <div
-        class="carousel-caption absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 text-center z-10 w-11/12 md:w-3/4 lg:w-2/3">
+        class="carousel-caption absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 text-center z-10 w-11/123 md:w-3/4 lg:w-2/3">
         <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white" data-translate="hero_title">Home of Desi Cows
           in Kutheda Kherla</h3>
         <p class="text-base md:text-lg lg:text-xl text-white" data-translate="hero_subtitle">Baba Bharathhari Ji
@@ -419,13 +482,13 @@
       </div>
       <!-- Carousel Controls -->
       <button
-        class="carousel-control-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full"
+        class="carousel-css carousel-control-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full"
         type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button
-        class="carousel-control-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full"
+        class="carousel-css carousel-control-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full"
         type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
@@ -440,7 +503,7 @@
         <!-- Notifications Board -->
         <div
           class="notifications-board w-full lg:w-[300px] flex-none bg-white border-2 border-green-600 rounded-lg shadow-xl overflow-hidden">
-          <h4 class="text-center py-3 bg-green-600 text-white font-bold text-lg" data-translate="donations_notice">
+          <h4 class="donation text-center py-3 bg-green-600 text-white font-bold text-lg" data-translate="donations_notice">
             Donations Notice Board</h4>
           <div class="relative">
             <marquee behavior="scroll" scrollamount="4" direction="up" onmouseover="this.stop()"
@@ -505,11 +568,11 @@
     </div>
 
     <!-- About Section -->
-    <section class="about py-16 bg-gray-50">
+    <section class="about py-16 bg-gray-50 space-y-8">
       <div class="container mx-auto px-4">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-          <div class="content relative overflow-hidden rounded-lg shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 px-4 md:px-0">
+          <div class="content relative overflow-hidden rounded-lg shadow-lg mb-8 md:mb-0">
             <img src="assets/img/cards/call-to-action1-jpg.webp" alt="Support Daily Feed"
               class="w-full h-64 object-cover">
             <div
@@ -521,7 +584,7 @@
                 data-translate="contact_us">Contact Us</a>
             </div>
           </div>
-          <div class="content relative overflow-hidden rounded-lg shadow-lg">
+          <div class="content relative overflow-hidden rounded-lg shadow-lg mb-8 md:mb-0">
             <img src="assets/img/cards/sponsor2-scaled-jpg.webp" alt="Sponsor Your Cow"
               class="w-full h-64 object-cover">
             <div
@@ -533,7 +596,7 @@
                 data-translate="contact_us">Contact Us</a>
             </div>
           </div>
-          <div class="content relative overflow-hidden rounded-lg shadow-lg">
+          <div class="content relative overflow-hidden rounded-lg shadow-lg mb-8 md:mb-0">
             <img src="assets/img/cards/feed1.png" alt="Meet & Feed Cows" class="w-full h-64 object-cover">
             <div
               class="content-details absolute bottom-0 left-0 right-0 bg-green-600 bg-opacity-90 text-white text-center p-6">
@@ -589,40 +652,6 @@
             </div>
           </div>
 
-          <!-- Vegetable Card 3 -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
-            <img src="assets/img/potatoe.jpg" alt="Potatoes" class="w-full h-32 sm:h-40 md:h-48 object-cover">
-            <div class="p-3 sm:p-4 md:p-6">
-              <h3 class="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-1 sm:mb-2"
-                data-translate="potatoes">Potatoes</h3>
-              <p class="text-xs sm:text-sm text-gray-600 mb-2" data-translate="potatoes_desc">Fresh organic potatoes
-                from our farm</p>
-              <div class="flex justify-between items-center">
-                <span class="text-green-600 font-bold text-sm sm:text-base">₹25/kg</span>
-                <a href="#" onclick="openBuyNowModal(); return false;"
-                  class="bg-[rgb(206,199,74)] text-white px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm rounded hover:bg-[rgb(186,179,54)] transition"
-                  data-translate="buy_now">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Vegetable Card 4 -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
-            <img src="assets/img/cauliflower.jpg" alt="Cauliflower" class="w-full h-32 sm:h-40 md:h-48 object-cover">
-            <div class="p-3 sm:p-4 md:p-6">
-              <h3 class="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-1 sm:mb-2"
-                data-translate="cauliflower">Cauliflower</h3>
-              <p class="text-xs sm:text-sm text-gray-600 mb-2" data-translate="cauliflower_desc">Fresh organic
-                cauliflower, pesticide-free</p>
-              <div class="flex justify-between items-center">
-                <span class="text-green-600 font-bold text-sm sm:text-base">₹35/piece</span>
-                <a href="#" onclick="openBuyNowModal(); return false;"
-                  class="bg-[rgb(206,199,74)] text-white px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm rounded hover:bg-[rgb(186,179,54)] transition"
-                  data-translate="buy_now">Buy Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- View All Button -->
         <div class="text-center mt-8">
@@ -675,40 +704,7 @@
             </div>
           </div>
 
-          <!-- Curd Card -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
-            <img src="assets/img/curd.jpg" alt="Fresh Curd" class="w-full h-32 sm:h-40 md:h-48 object-cover">
-            <div class="p-3 sm:p-4 md:p-6">
-              <h3 class="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-1 sm:mb-2"
-                data-translate="fresh_curd">Fresh Curd</h3>
-              <p class="text-xs sm:text-sm text-gray-600 mb-2" data-translate="curd_desc">Naturally set curd from pure
-                cow milk</p>
-              <div class="flex justify-between items-center">
-                <span class="text-green-600 font-bold text-sm sm:text-base">₹40/400g</span>
-                <a href="#" onclick="openBuyNowModal(); return false;"
-                  class="bg-[rgb(206,199,74)] text-white px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm rounded hover:bg-[rgb(186,179,54)] transition"
-                  data-translate="buy_now">Buy Now</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Lassi Card -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
-            <img src="assets/img/lassi.jpg" alt="Sweet Lassi" class="w-full h-32 sm:h-40 md:h-48 object-cover">
-            <div class="p-3 sm:p-4 md:p-6">
-              <h3 class="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-1 sm:mb-2"
-                data-translate="sweet_lassi">Sweet Lassi</h3>
-              <p class="text-xs sm:text-sm text-gray-600 mb-2" data-translate="lassi_desc">Refreshing sweet lassi made
-                from fresh curd</p>
-              <div class="flex justify-between items-center">
-                <span class="text-green-600 font-bold text-sm sm:text-base">₹30/glass</span>
-                <a href="#" onclick="openBuyNowModal(); return false;"
-                  class="bg-[rgb(206,199,74)] text-white px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm rounded hover:bg-[rgb(186,179,54)] transition"
-                  data-translate="buy_now">Buy Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <!-- View All Button -->
         <div class="text-center mt-8">
@@ -738,7 +734,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-green-600 text-white">
+  <footer class="footer-s text-white">
     <div class="container mx-auto px-4 py-8 md:py-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         <!-- About Section -->
@@ -1159,182 +1155,126 @@
     });
   </script>
   <script>
-    // Add to your existing JavaScript
-    document.addEventListener('DOMContentLoaded', function () {
-      const mobileMenu = document.querySelector('.mobile-menu');
-      const mobileMenuButton = document.querySelector('.mobile-nav-toggle');
+<script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdowns = document.querySelectorAll('.group');
 
-      mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
-      });
-
-      // Close menu on window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1024) {
-          mobileMenu.classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        }
-      });
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Mobile menu functionality
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('nav-menu');
-      let isMenuOpen = false;
-
-      function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-        navMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden', isMenuOpen);
-      }
-
-      function closeMenu() {
-        if (isMenuOpen) {
-          isMenuOpen = false;
-          navMenu.classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        }
-      }
-
-      // Event listeners
-      hamburger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleMenu();
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (isMenuOpen && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-          closeMenu();
-        }
-      });
-
-      // Close menu on window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1024) {
-          closeMenu();
-        }
-      });
-
-      // Handle dropdown menus
-      const dropdowns = document.querySelectorAll('.dropdown');
-      dropdowns.forEach(dropdown => {
-        const trigger = dropdown.querySelector('a');
-        const menu = dropdown.querySelector('ul');
-
-        trigger.addEventListener('click', (e) => {
-          if (window.innerWidth < 1024) {
-            e.preventDefault();
-            menu.classList.toggle('hidden');
-          }
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
         });
-      });
+
+        // Close menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+        });
     });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburgerBtn = document.getElementById('hamburger-btn');
+</script>
 
-      const navMenu = document.getElementById('nav-menu');
-      const dropdowns = document.querySelectorAll('.dropdown');
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mobile menu functionality
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
 
-      // Toggle menu
-      function toggleMenu() {
-        const isMenuOpen = navMenu.classList.contains('hidden');
-        navMenu.classList.toggle('hidden');
-        document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-
-        // Animate hamburger icon
-        hamburgerBtn.classList.toggle('active');
-      }
-
-
-      // Close menu
-      function closeMenu() {
-        navMenu.classList.add('hidden');
-        document.body.style.overflow = '';
-        hamburgerBtn.classList.remove('active');
-      }
-
-      // Event Listeners
-      hamburgerBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleMenu();
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-          closeMenu();
+        // Toggle menu function
+        function toggleMenu() {
+            const isMenuOpen = navMenu.classList.contains('hidden');
+            navMenu.classList.toggle('hidden');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            hamburgerBtn.classList.toggle('active');
         }
-      });
 
-      // Handle dropdowns
-      dropdowns.forEach(dropdown => {
-        const trigger = dropdown.querySelector('a');
-        const menu = dropdown.querySelector('.dropdown-menu');
+        // Close menu function
+        function closeMenu() {
+            navMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            hamburgerBtn.classList.remove('active');
+        }
 
-        trigger.addEventListener('click', (e) => {
-          if (window.innerWidth < 1024) {
-            e.preventDefault();
-            menu.classList.toggle('hidden');
+        // Event Listeners
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
 
-            // Close other dropdowns
-            dropdowns.forEach(other => {
-              if (other !== dropdown) {
-                other.querySelector('.dropdown-menu').classList.add('hidden');
-              }
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Handle dropdowns
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('a');
+            const menu = dropdown.querySelector('.dropdown-menu');
+
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth < 1024) {
+                    e.preventDefault();
+                    menu.classList.toggle('hidden');
+
+                    // Close other dropdowns
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) {
+                            other.querySelector('.dropdown-menu').classList.add('hidden');
+                        }
+                    });
+                }
             });
-          }
         });
-      });
 
-      // Close menu on window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1024) {
-          closeMenu();
-          // Reset all dropdowns
-          dropdowns.forEach(dropdown => {
-            dropdown.querySelector('.dropdown-menu').classList.add('hidden');
-          });
-        }
-      });
+        // Close menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeMenu();
+                // Reset all dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.querySelector('.dropdown-menu').classList.add('hidden');
+                });
+            }
+        });
     });
-  </script>
-  <script>
+</script>
+
+<script>
     // Buy Now Form functionality
     function openBuyNowModal() {
-      document.getElementById('buyNowModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+        document.getElementById('buyNowModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeBuyNowModal() {
-      document.getElementById('buyNowModal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
+        document.getElementById('buyNowModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
     }
 
     // Update all Buy Now buttons to open the modal
-    document.addEventListener('DOMContentLoaded', function () {
-      const buyButtons = document.querySelectorAll('[data-translate="buy_now"]');
-      buyButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-          e.preventDefault();
-          openBuyNowModal();
+    document.addEventListener('DOMContentLoaded', function() {
+        const buyButtons = document.querySelectorAll('[data-translate="buy_now"]');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                openBuyNowModal();
+            });
         });
-      });
 
-      // Handle form submission
-      document.getElementById('orderForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Order placed successfully!');
-        closeBuyNowModal();
-      });
+        // Handle form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Order placed successfully!');
+            closeBuyNowModal();
+        });
     });
-  </script>
+</script>
 </body>
-
 </html>

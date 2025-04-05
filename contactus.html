@@ -1,259 +1,713 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact Us - Baba Bharathhari Ji Gaushala</title>
+    <meta content="Contact Baba Bharathhari Ji Gaushala in Himachal Pradesh for inquiries about our services including Panch Gavya, Organic Vegetables, and more" name="description">
+    <meta content="gaushala, contact, himachal pradesh, organic products, panch gavya" name="keywords">
 
-  <title>Contact Us</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.ico" rel="icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #1d863a;
+            --secondary-color: #155724;
+            --text-color: #444;
+            --light-bg: #f8f9fa;
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            background: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
 
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--secondary-color);
+        }
+
+        /* Header */
+        #header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .navbar ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover,
+        .navbar .active {
+            color: var(--primary-color);
+        }
+
+        .navbar a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 5px 20px rgba(29, 134, 58, 0.15);
+            border-radius: 8px;
+            min-width: 220px;
+            padding: 12px 0;
+            margin-top: 5px;
+            z-index: 1000;
+            border: 1px solid rgba(29, 134, 58, 0.1);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 12px 24px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(29, 134, 58, 0.05);
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(29, 134, 58, 0.1);
+            color: var(--primary-color);
+            padding-left: 28px;
+        }
+
+        /* Mobile Menu */
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+            .navbar ul {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                background: white;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                flex-direction: column !important;
+                z-index: 60;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+            .mobile-menu.show {
+                display: flex !important;
+            }
+            #hamburger-btn {
+                position: relative;
+                z-index: 70;
+                display: block;
+                background: transparent;
+                border: solid transparent;
+            }
+            .mobile-nav-toggle {
+                display: block;
+                position: relative;
+                z-index: 70;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            .navbar a {
+                padding: 12px 20px;
+                display: block;
+            }
+            .dropdown-menu {
+                position: static !important;
+                box-shadow: none;
+                margin: 5px 0 5px 20px;
+                padding: 0;
+                background: transparent;
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                width: auto;
+            }
+            .dropdown-open .dropdown-menu {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 15px 0;
+            background: #fff;
+        }
+
+        .breadcrumbs h2 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .breadcrumbs ol {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .breadcrumbs ol li + li::before {
+            content: '/';
+            color: var(--text-color);
+            margin-right: 10px;
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 0;
+        }
+
+        .contact .info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact .info i {
+            font-size: 20px;
+            color: var(--primary-color);
+            float: left;
+            width: 40px;
+            height: 40px;
+            background: rgba(29, 134, 58, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .contact .info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-left: 55px;
+        }
+
+        .contact .info p {
+            padding-left: 55px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .contact .info iframe {
+            margin-top: 20px;
+        }
+
+        /* Contact Form */
+        .php-email-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .php-email-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .php-email-form label {
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            display: block;
+            color: var(--text-color);
+        }
+
+        .php-email-form input,
+        .php-email-form textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .php-email-form .mt-3 {
+            margin-top: 1.5rem;
+        }
+
+        .php-email-form button[type="submit"] {
+            margin-top: 1.5rem;
+            padding: 0.875rem 2.5rem;
+        }
+        .php-email-form input:focus,
+        .php-email-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .php-email-form button[type="submit"] {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .php-email-form button[type="submit"]:hover {
+            background: var(--secondary-color);
+        }
+
+        .php-email-form .loading,
+        .php-email-form .error-message,
+        .php-email-form .sent-message {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .php-email-form .loading {
+            background: #f4f4f4;
+            color: var(--text-color);
+        }
+
+        .php-email-form .error-message {
+            background: #fde8e8;
+            color: #e53e3e;
+        }
+
+        .php-email-form .sent-message {
+            background: #e6f4ea;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        #footer {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-top {
+            padding-bottom: 30px;
+        }
+
+        .footer-contact h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .footer-links ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+        }
+
+        .copyright, .credits {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .credits a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="preloader"></div>
-
-  <a href="#" class="back-to-topicon d-flex align-items-center justify-content-center"><i
-    class="bi bi-arrow-up-short"></i></a>
-    <div class="logo">
-        <h1>Baba Bharathhari Ji Gaushala</h1>
-      </div>
-        <!-- ======= Header ======= -->
-        <header id="header" class="  sticky-top">
-          <div class="container d-flex align-items-center justify-content-center">
-      
-            <!-- <div class="logo">
-              <h1 class="text-light"><a href="index.html"><span>Baba Bharathhari Narh Ji Gaushala</span></a></h1>
-               Uncomment below if you prefer to use an image logo -->
-              <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            </div> 
-      
-            <nav id="navbar" class="navbar align-items-center ">
-              <ul>
-                <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-                <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
-                  <ul>
-                    <li><a href="panchgavya.html">Panch Gavya</a></li>
-                    <li><a href="veg.html">Organic Vegitables</a></li>
-                    <li><a href="fertilizer.html">Fertilizer</a></li>
-                    <li><a href="havandhoop.html">Havan Dhoop</a></li>
-                  </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="Gallery.html">Gallery</a></li>
-                <!-- <li><a class="nav-link scrollto" href="#">Donations</a></li> -->
-                <li><a class="nav-link scrollto" href="contactus.html">Contact us</a></li>
-                <li class="dropdown"><a href="#"><span>Members</span> <i class="bi bi-chevron-down"></i></a>
-                  <ul>
-                    <li><a href="Social.html">Social Members</a></li>
-                    <li><a href="society.html">Society Members</a></li>
-        
-                  </ul>
-                </li>
-                <!-- <li><a class="getstarted scrollto" href="#">DONATE</a></li> -->
-              </ul>
-              <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-        
-      
-          </div>
-        </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Contact Us</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Contact us</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs Section -->
-
-<!-- ======= Team Section ======= -->
-<section id="team" class="team">
-    <div class="container">
-
-
-       <!-- ======= Contact Us Section ======= -->
-       <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
-
-          <div class="section-title">
-            <h2>Contact Us</h2>
-            <p>Contact us for any Query</p>
-          </div>
-
-          <div class="row">
-
-            <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div class="info">
-                <div class="address">
-                  <i class="bi bi-geo-alt"></i>
-                  <h4>Location:</h4>
-                  <p> Kutheda Kherla
-                    Teh. Amb Distt. Una
-                    Himachal Pradesh</p>
-                </div>
-
-                <div class="email">
-                  <i class="bi bi-envelope"></i>
-                  <h4>Email:</h4>
-                  <p>Officialgaushala@gmail.com</p>
-                </div>
-
-                <div class="phone">
-                  <i class="bi bi-phone"></i>
-                  <h4>Call:</h4>
-                  <p>7018606101</p>
-                </div>
-
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.125418538384!2d76.1128269244826!3d31.685139124138885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2226cf179d25%3A0xa09ec16e01d4b96a!2sKuthera%20Kherla%2C%20Amb%2C%20Himachal%20Pradesh%20177203!5e0!3m2!1sen!2sin!4v1709277986489!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                  frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-              </div>
-
+    <header id="header" class="sticky-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <h1><a href="index.html">Baba Bharathhari Ji Gaushala</a></h1>
             </div>
+            <nav id="navbar" class="navbar">
+                <button id="hamburger-btn" class="mobile-nav-toggle">
+                    <i class="bi bi-list"></i>
+                </button>
+                <ul class="mobile-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="panchgavya.html">Panch Gavya</a></li>
+                            <li><a class="dropdown-item" href="veg.html">Organic Vegetables</a></li>
+                            <li><a class="dropdown-item" href="fertilizer.html">Fertilizer</a></li>
+                            <li><a class="dropdown-item" href="havandhoop.html">Havan Dhoop</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="contactus.html" class="active">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Members</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Social.html">Social Members</a></li>
+                            <li><a class="dropdown-item" href="society.html">Society Members</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+    <main id="main">
+        <section class="breadcrumbs">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Contact Us</h2>
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Contact Us</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
 
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                
+        <section id="contact" class="contact">
+            <div class="container">
                 <div class="row">
-                  <div class="form-group col-md-6">
-                    <label for="name">Your Name</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                  </div>
-                  <div class="form-group col-md-6 mt-3 mt-md-0">
-                    <label for="name">Your Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                  </div>
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info w-100">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>Kutheda Kherla, Teh. Amb Distt. Una, Himachal Pradesh</p>
+                            </div>
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>Officialgaushala@gmail.com</p>
+                            </div>
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>7018606101</p>
+                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.125418538384!2d76.1128269244826!3d31.685139124138885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2226cf179d25%3A0xa09ec16e01d4b96a!2sKuthera%20Kherla%2C%20Amb%2C%20Himachal%20Pradesh%20177203!5e0!3m2!1sen!2sin!4v1709277986489!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" name="message" rows="10" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group mt-3">
-                  <label for="name">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group mt-3">
-                  <label for="name">Message</label>
-                  <textarea class="form-control" name="message" rows="10" required></textarea>
-                </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form>
             </div>
+        </section>
+    </main>
 
-          </div>
-
-        </div>
-      </section><!-- End Contact Us Section -->
-  </main>
-
-
- 
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Gaushala</h3>
-            <p>
-              Kutheda Kherla <br>
-              Teh. Amb Distt. Una<br>
-              Himachal Pradesh<br><br>
-              <strong>Phone:</strong>7018606101<br>
-              <strong>Email:</strong>Officialgaushala@gmail.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Donations</a></li> -->
-              <li><i class="bx bx-chevron-right"></i> <a href="Gallery.html">Gallery</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contactus.html">Contact Us </a></li>
-              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="havandhoop.html">Havan Dhoop</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="panchgavya.html">Panch Gavya</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="fertilizer.html">Fertilizer</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="veg.html">Organic Vegitables</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Get In Touch Via Social</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-              <!-- <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Baba Bharathhari Ji Gaushala</h3>
+                        <p>
+                            Kutheda Kherla<br>
+                            Teh. Amb Distt. Una<br>
+                            Himachal Pradesh<br><br>
+                            <strong>Phone:</strong> 7018606101<br>
+                            <strong>Email:</strong> Officialgaushala@gmail.com<br>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="Gallery.html">Gallery</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="havandhoop.html">Havan Dhoop</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="panchgavya.html">Panch Gavya</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="fertilizer.html">Fertilizer</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="veg.html">Organic Vegetables</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Get In Touch Via Social</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
         </div>
-      </div>
-    </div>
+        <div class="container py-4">
+            <div class="copyright">
+                © Copyright <strong><span>Baba Bharathhari Nath Ji Gaushala</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="#">SAHIL KUMAR & PRINCE RANA</a>
+            </div>
+        </div>
+    </footer>
 
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Baba Bharathhari Nath Ji Gaushala </span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="">SAHIL KUMAR & PRINCE RANA</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-  
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
 
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navbar = document.querySelector('#navbar');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            mobileNavToggle.addEventListener('click', function() {
+                navbar.classList.toggle('navbar-mobile');
+                mobileMenu.classList.toggle('show');
+                this.classList.toggle('bi-list');
+                this.classList.toggle('bi-x');
+            });
+
+            // Handle dropdown menus on mobile
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const dropdownToggle = dropdown.querySelector('a');
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                
+                dropdownToggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                        dropdown.classList.toggle('active');
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target) && window.innerWidth <= 1024) {
+                        dropdownMenu.style.display = 'none';
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navbar.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+                    navbar.classList.remove('navbar-mobile');
+                    mobileMenu.classList.remove('show');
+                    mobileNavToggle.classList.remove('bi-x');
+                    mobileNavToggle.classList.add('bi-list');
+                }
+            });
+        });
+    </script>
+    document.getElementById('hamburger-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const mobileMenu = document.querySelector('.mobile-menu');
+      mobileMenu.classList.toggle('show');
+      const icon = this.querySelector('i');
+      if (mobileMenu.classList.contains('show')) {
+        icon.classList.remove('bi-list');
+        icon.classList.add('bi-x');
+      } else {
+        icon.classList.remove('bi-x');
+        icon.classList.add('bi-list');
+      }
+    });
+
+    // Unified dropdown handler for both mobile and desktop
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('a');
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        dropdownToggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
 </body>
-
 </html>
