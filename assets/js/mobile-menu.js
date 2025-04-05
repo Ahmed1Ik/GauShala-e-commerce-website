@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle mobile menu
     hamburgerBtn.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         const icon = this.querySelector('i');
         this.classList.toggle('active');
         mobileMenu.classList.toggle('show');
@@ -17,6 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             icon.classList.remove('bi-x');
             icon.classList.add('bi-list');
+        }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburgerBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.remove('show');
+            hamburgerBtn.classList.remove('active');
+            const icon = hamburgerBtn.querySelector('i');
+            icon.classList.remove('bi-x');
+            icon.classList.add('bi-list');
+            
+            // Close all dropdowns
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                dropdownMenu.style.display = 'none';
+                dropdownMenu.style.opacity = '0';
+                dropdownMenu.style.transform = 'translateY(10px)';
+            });
         }
     });
 
