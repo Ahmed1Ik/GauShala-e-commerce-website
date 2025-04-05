@@ -70,7 +70,7 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary-color);
             margin: 0;
@@ -182,7 +182,7 @@
             .navbar ul {
                 display: none;
                 position: fixed;
-                top: 70px;
+                top: 20px;
                 left: 0;
                 right: 0;
                 width: 100%;
@@ -717,3 +717,54 @@
 </script>
 </body>
 </html>
+<script src="assets/js/mobile-menu.js"></script>
+<script>
+    let isAnimating = false;
+</script>
+<style>
+    /* Mobile Menu Toggle Animation */
+    .mobile-nav-toggle {
+        transition: transform 0.3s ease;
+    }
+    .mobile-nav-toggle.active {
+        transform: rotate(90deg);
+    }
+    
+    /* Mobile Menu Animation */
+    .mobile-menu {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform: translateY(-20px);
+        opacity: 0;
+        display: none;
+    }
+    
+    .mobile-menu.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    /* Dropdown Animation */
+    .dropdown-menu {
+        transition: all 0.3s ease;
+    }
+    
+    @media (max-width: 1024px) {
+        .navbar ul {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            background: transparent;
+            padding-left: 20px;
+        }
+        
+        .dropdown-item {
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 5px 0;
+        }
+    }
+</style>

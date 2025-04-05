@@ -3,21 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const dropdowns = document.querySelectorAll('.dropdown');
 
-    // Toggle mobile menu
-    hamburgerBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const icon = this.querySelector('i');
-        this.classList.toggle('active');
-        mobileMenu.classList.toggle('show');
+    hamburgerBtn.addEventListener('click', function() {
+        if (isAnimating) return;
+        isAnimating = true;
         
-        // Toggle hamburger icon
-        if (icon.classList.contains('bi-list')) {
-            icon.classList.remove('bi-list');
-            icon.classList.add('bi-x');
+        this.classList.toggle('active');
+        if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+            mobileMenu.style.display = 'flex';
+            setTimeout(() => mobileMenu.classList.add('show'), 10);
         } else {
-            icon.classList.remove('bi-x');
-            icon.classList.add('bi-list');
+            mobileMenu.classList.remove('show');
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                isAnimating = false;
+            }, 300);
+        }
+        
+        if (mobileMenu.style.display === 'flex') {
+            setTimeout(() => isAnimating = false, 300);
         }
     });
 
