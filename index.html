@@ -371,6 +371,11 @@ p-6 {
         margin-top: 0.5rem;
       }
     }
+    
+    [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+    height: 6vh;
+}
   </style>
 </head>
 
@@ -385,11 +390,7 @@ p-6 {
 
         <!-- Hamburger Button -->
         <button id="hamburger-btn" class="lg:hidden p-2 rounded focus:outline-none z-99">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path class="hamburger-top" stroke-linecap="round" stroke-width="2" d="M4 6h16" />
-            <path class="hamburger-middle" stroke-linecap="round" stroke-width="2" d="M4 12h16" />
-            <path class="hamburger-bottom" stroke-linecap="round" stroke-width="2" d="M4 18h16" />
-          </svg>
+          <i class="bi bi-list"></i>
         </button>
 
         <!-- Navigation Menu -->

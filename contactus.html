@@ -59,212 +59,308 @@
             color: var(--secondary-color);
         }
 
-        /* Header */
-        #header {
-            background: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
+  /* Header */
+  #header {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+    }
 
-        .logo h1 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin: 0;
-        }
+    .logo h1 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin: 0;
+    }
 
-        .navbar ul {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
 
-        .navbar a {
-            color: var(--text-color);
-            font-weight: 500;
-            padding: 10px 15px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    @media (max-width: 1024px) 
+    {
+      
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: white;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column !important;
+        z-index: 60;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+      }
 
-        .navbar a:hover,
-        .navbar .active {
-            color: var(--primary-color);
-        }
+      .mobile-menu.show {
+        display: flex !important;
+      }
 
-        .navbar a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
+      #hamburger-btn {
+        position: relative;
+        z-index: 70;
+        display: block;
+        background: transparent;
+        border: solid transparent;
+    }
 
-        .navbar a:hover::after {
-            width: 100%;
-        }
+      .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 70;
+      }
 
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
+      .navbar ul li {
+        margin: 10px 0;
+      }
 
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            box-shadow: 0 5px 20px rgba(29, 134, 58, 0.15);
-            border-radius: 8px;
-            min-width: 220px;
-            padding: 12px 0;
-            margin-top: 5px;
-            z-index: 1000;
-            border: 1px solid rgba(29, 134, 58, 0.1);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            visibility: hidden;
-        }
+      .navbar a {
+        padding: 12px 20px;
+        display: block;
+      }
 
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-            visibility: visible;
-        }
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none;
+        margin: 5px 0 5px 20px;
+        padding: 0;
+        background: transparent;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+      }
 
-        .dropdown-item {
-            display: block;
-            width: 100%;
-            padding: 12px 24px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            border-bottom: 1px solid rgba(29, 134, 58, 0.05);
-        }
+      .dropdown-open .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
 
-        .dropdown-item:last-child {
-            border-bottom: none;
-        }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+    .navbar a {
+      color: var(--text-color);
+      font-weight: 500;
+      padding: 10px 15px;
+      position: relative;
+    }
 
-        .dropdown-item:hover {
-            background: rgba(29, 134, 58, 0.1);
-            color: var(--primary-color);
-            padding-left: 28px;
-        }
+    .navbar a:hover,
+    .navbar .active a {
+      color: var(--primary-color);
+    }
 
-        /* Mobile Menu */
-        .mobile-nav-toggle {
-            display: none;
-            font-size: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--text-color);
-        }
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
 
-        @media (max-width: 1024px) {
-            .mobile-nav-toggle {
-                display: block;
-            }
-            .navbar ul {
-                display: none;
-                position: fixed;
-                top: 20px;
-                left: 0;
-                right: 0;
-                width: 100%;
-                background: white;
-                padding: 15px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                flex-direction: column !important;
-                z-index: 60;
-                max-height: calc(100vh - 70px);
-                overflow-y: auto;
-            }
-            .mobile-menu.show {
-                display: flex !important;
-            }
-            #hamburger-btn {
-                position: relative;
-                z-index: 70;
-                display: block;
-                background: transparent;
-                border: solid transparent;
-            }
-            .mobile-nav-toggle {
-                display: block;
-                position: relative;
-                z-index: 70;
-            }
-            .navbar ul li {
-                margin: 10px 0;
-            }
-            .navbar a {
-                padding: 12px 20px;
-                display: block;
-            }
-            .dropdown-menu {
-                position: static !important;
-                box-shadow: none;
-                margin: 5px 0 5px 20px;
-                padding: 0;
-                background: transparent;
-                display: none;
-                opacity: 1;
-                visibility: visible;
-                width: auto;
-            }
-            .dropdown-open .dropdown-menu {
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(-10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        }
+    .navbar a:hover::after {
+      width: 100%;
+    }
 
-        /* Breadcrumbs */
-        .breadcrumbs {
-            padding: 15px 0;
-            background: #fff;
-        }
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      background: white;
+      padding: 10px 0;
+      border-radius: 8px;
+      min-width: 200px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    @media (max-width: 1024px) {
+      .dropdown-menu {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        margin: 5px 0 5px 20px;
+        padding: 0;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
 
-        .breadcrumbs h2 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
 
-        .breadcrumbs ol {
-            list-style: none;
-            display: flex;
-            gap: 10px;
-            margin: 0;
-        }
+    @media (max-width: 1024px) {
+      .dropdown-open .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
 
-        .breadcrumbs ol li + li::before {
-            content: '/';
-            color: var(--text-color);
-            margin-right: 10px;
-        }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
 
-        .breadcrumbs a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+    .dropdown-item {
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background: cadetblue;
+      padding-left: 25px;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 28px;
+      color: cadetblue;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 70;
+    }
+
+    @media (max-width: 991px) {
+      .navbar ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        overflow-y: auto;
+        padding: 1vh 20px 20px;
+        z-index: 60;
+
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .navbar a {
+        padding: 12px 20px;
+        display: block;
+      }
+
+      .navbar a::after {
+        display: none;
+      }
+
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none;
+        margin: 5px 0;
+        padding: 10px 15px;
+        background: #ffffff;
+        border-radius: 8px;
+        width: 100%;
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 70;
+      }
+
+      .navbar-mobile-active {
+        display: block !important;
+      }
+      
+      .main-content h1 {
+        font-size: 2rem;
+      }
+      
+      .main-content .row {
+        flex-direction: column-reverse;
+      }
+      
+      .main-content .col-lg-6:first-child {
+        margin-top: 30px;
+      }
+      
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      padding: 40px 0;
+      background: var(--light-bg);
+    }
+
+    .breadcrumbs h2 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+
+    .breadcrumbs ol {
+      background: rgba(255,255,255,0.8);
+      padding: 8px 15px;
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+    }
+    
+    .breadcrumbs ol li {
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    
+    .breadcrumbs ol li + li {
+      padding-left: 10px;
+    }
+    
+    .breadcrumbs ol li + li::before {
+      display: inline-block;
+      padding-right: 10px;
+      color: var(--text-color);
+      content: "/";
+    }
+    
+    @media (max-width: 768px) {
+      .breadcrumbs {
+        padding: 20px 0;
+      }
+      
+      .breadcrumbs h2 {
+        font-size: 1.5rem;
+      }
+      
+      .breadcrumbs ol {
+        padding: 6px 10px;
+      }
+    }
+
 
         /* Contact Section */
         .contact {
@@ -468,52 +564,56 @@
 </head>
 
 <body>
-    <header id="header" class="sticky-top">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="logo">
-                <h1><a href="index.html">Baba Bharathhari Ji Gaushala</a></h1>
-            </div>
-            <nav id="navbar" class="navbar">
-                <button id="hamburger-btn" class="mobile-nav-toggle">
-                    <i class="bi bi-list"></i>
-                </button>
-                <ul class="mobile-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="panchgavya.html">Panch Gavya</a></li>
-                            <li><a class="dropdown-item" href="veg.html">Organic Vegetables</a></li>
-                            <li><a class="dropdown-item" href="fertilizer.html">Fertilizer</a></li>
-                            <li><a class="dropdown-item" href="havandhoop.html">Havan Dhoop</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="Gallery.html">Gallery</a></li>
-                    <li><a href="contactus.html" class="active">Contact Us</a></li>
-                    <li class="dropdown">
-                        <a href="#"><span>Members</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Social.html">Social Members</a></li>
-                            <li><a class="dropdown-item" href="society.html">Society Members</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <!-- Header -->
+ <header id="header" class="sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1><a href="index.html">Baba Bharathhari Ji Gaushala</a></h1>
+      </div>
 
-    <main id="main">
-        <section class="breadcrumbs">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Contact Us</h2>
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Contact Us</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
+      <nav id="navbar" class="navbar">
+        <button id="hamburger-btn" class="mobile-nav-toggle">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="mobile-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="active"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item active" href="panchgavya.html">Panch Gavya</a></li>
+              <li><a class="dropdown-item" href="veg.html">Organic Vegetables</a></li>
+              <li><a class="dropdown-item" href="fertilizer.html">Fertilizer</a></li>
+              <li><a class="dropdown-item" href="havandhoop.html">Havan Dhoop</a></li>
+            </ul>
+          </li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Members</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Social.html">Social Members</a></li>
+              <li><a class="dropdown-item" href="society.html">Society Members</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Panch Gavya</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Services</li>
+          <li>Panch Gavya</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
 
         <section id="contact" class="contact">
             <div class="container">
@@ -637,55 +737,11 @@
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-            const navbar = document.querySelector('#navbar');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            mobileNavToggle.addEventListener('click', function() {
-                navbar.classList.toggle('navbar-mobile');
-                mobileMenu.classList.toggle('show');
-                this.classList.toggle('bi-list');
-                this.classList.toggle('bi-x');
-            });
-
-            // Handle dropdown menus on mobile
-            const dropdowns = document.querySelectorAll('.dropdown');
-            
-            dropdowns.forEach(dropdown => {
-                const dropdownToggle = dropdown.querySelector('a');
-                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-                
-                dropdownToggle.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 1024) {
-                        e.preventDefault();
-                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-                        dropdown.classList.toggle('active');
-                    }
-                });
-
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!dropdown.contains(e.target) && window.innerWidth <= 1024) {
-                        dropdownMenu.style.display = 'none';
-                        dropdown.classList.remove('active');
-                    }
-                });
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!navbar.contains(e.target) && !mobileNavToggle.contains(e.target)) {
-                    navbar.classList.remove('navbar-mobile');
-                    mobileMenu.classList.remove('show');
-                    mobileNavToggle.classList.remove('bi-x');
-                    mobileNavToggle.classList.add('bi-list');
-                }
-            });
-        });
-
-    document.getElementById('hamburger-btn').addEventListener('click', function(e) {
+      
+</script>
+<script>
+ 
+ document.getElementById('hamburger-btn').addEventListener('click', function(e) {
       e.stopPropagation();
       const mobileMenu = document.querySelector('.mobile-menu');
       mobileMenu.classList.toggle('show');
@@ -700,71 +756,107 @@
     });
 
     // Unified dropdown handler for both mobile and desktop
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    dropdowns.forEach(dropdown => {
-        const dropdownToggle = dropdown.querySelector('a');
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+    document.querySelectorAll('.dropdown > a').forEach(function(dropdownToggle) {
+      dropdownToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = this.parentElement;
+        const dropdownMenu = this.nextElementSibling;
         
-        dropdownToggle.addEventListener('click', function(e) {
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-                dropdown.classList.toggle('active');
-            }
+        // Close all other dropdowns first
+        document.querySelectorAll('.dropdown').forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('dropdown-open');
+            d.querySelector('.dropdown-menu').style.display = 'none';
+          }
         });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('dropdown-open');
+        dropdownMenu.style.display = dropdown.classList.contains('dropdown-open') ? 'block' : 'none';
+      });
     });
-</script>
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      if (!hamburgerBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('show')) {
+        mobileMenu.classList.remove('show');
+        const icon = hamburgerBtn.querySelector('i');
+        icon.classList.add('bi-list');
+        icon.classList.remove('bi-x');
+      }
+    });
+  </script>
+
+  <!-- Main JS -->
+  <script>
+    // Preloader and AOS initialization
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      if (preloader) preloader.style.display = 'none';
+      
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('active', window.scrollY > 300);
+    });
+
+    // Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navbar = document.querySelector('#navbar ul');
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+      
+      // Toggle mobile menu
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+        navbar.classList.toggle('navbar-mobile-active');
+      });
+
+      // Remove duplicate dropdown handler since we have a unified one above
+
+      // Document click handler (close menus when clicking outside)
+      document.addEventListener('click', function(e) {
+        if (!navbar.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+          // Reset mobile navigation
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+          
+          // Close all dropdowns
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+
+        // Close dropdowns when clicking anywhere else on the page
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+
+      // Simplified resize handler
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+        } else {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+    });
+  </script>
+
+ </script>
 </body>
 </html>
-<script src="assets/js/mobile-menu.js"></script>
-<script>
-    let isAnimating = false;
-</script>
-<style>
-    /* Mobile Menu Toggle Animation */
-    .mobile-nav-toggle {
-        transition: transform 0.3s ease;
-    }
-    .mobile-nav-toggle.active {
-        transform: rotate(90deg);
-    }
-    
-    /* Mobile Menu Animation */
-    .mobile-menu {
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        transform: translateY(-20px);
-        opacity: 0;
-        display: none;
-    }
-    
-    .mobile-menu.show {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    
-    /* Dropdown Animation */
-    .dropdown-menu {
-        transition: all 0.3s ease;
-    }
-    
-    @media (max-width: 1024px) {
-        .navbar ul {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 0 0 15px 15px;
-        }
-        
-        .dropdown-menu {
-            border: none;
-            background: transparent;
-            padding-left: 20px;
-        }
-        
-        .dropdown-item {
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin: 5px 0;
-        }
-    }
-</style>

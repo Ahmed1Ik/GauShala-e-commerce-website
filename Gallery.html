@@ -55,7 +55,7 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-      color: cadetblue;
+      color: bisque;
     }
 
     .btn-primary {
@@ -317,7 +317,7 @@
       }
       
       .logo h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
     }
 
@@ -489,8 +489,8 @@
 
     /* Footer */
     #footer {
-      background: var(--primary-color);
-      color: rgba(255,255,255,0.9);
+      background: cadetblue;
+      color: var(--light-bg);
       padding: 60px 0 20px;
       width: 100%;
       overflow-x: hidden;
@@ -591,6 +591,11 @@
     .back-to-top.active {
       opacity: 1;
     }
+
+    a {
+    color: cadetblue;
+    text-decoration: none;
+}
   </style>
 </head>
 
@@ -825,7 +830,6 @@
   
   <!-- Custom Scripts -->
   <script>
-    // Mobile Menu Toggle Script
     document.getElementById('hamburger-btn').addEventListener('click', function(e) {
       e.stopPropagation();
       const mobileMenu = document.querySelector('.mobile-menu');
@@ -873,22 +877,73 @@
         icon.classList.remove('bi-x');
       }
     });
+  </script>
 
-    // Ensure preloader is removed
-    window.addEventListener('load', function() {
+  <!-- Main JS -->
+  <script>
+    // Preloader and AOS initialization
+    window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.style.display = 'none';
-      }
+      if (preloader) preloader.style.display = 'none';
+      
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
     });
-    
+
     // Back to Top Button
     const backToTop = document.querySelector('.back-to-top');
-    if (backToTop) {
-      window.addEventListener('scroll', () => {
-        backToTop.classList.toggle('active', window.scrollY > 300);
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('active', window.scrollY > 300);
+    });
+
+    // Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navbar = document.querySelector('#navbar ul');
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+      
+      // Toggle mobile menu
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+        navbar.classList.toggle('navbar-mobile-active');
       });
-    }
+
+      // Remove duplicate dropdown handler since we have a unified one above
+
+      // Document click handler (close menus when clicking outside)
+      document.addEventListener('click', function(e) {
+        if (!navbar.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+          // Reset mobile navigation
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+          
+          // Close all dropdowns
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+
+        // Close dropdowns when clicking anywhere else on the page
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+
+      // Simplified resize handler
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+        } else {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+    });
   </script>
 </body>
 </html>
