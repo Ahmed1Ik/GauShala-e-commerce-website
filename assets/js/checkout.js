@@ -13,6 +13,7 @@ class CheckoutSystem {
       { id: 'free', name: 'Free Delivery', price: 0, days: '5-7', minOrder: 500 }
     ];
     this.paymentMethods = [
+<<<<<<< HEAD
       { id: 'cod', name: 'Cash on Delivery', icon: 'bi-cash', fields: [] },
       { id: 'upi', name: 'UPI Payment', icon: 'bi-phone', fields: [
         { name: 'upiId', label: 'UPI ID', type: 'text', placeholder: 'username@bank', required: true }
@@ -23,6 +24,11 @@ class CheckoutSystem {
         { name: 'expiryDate', label: 'Expiry Date', type: 'text', placeholder: 'MM/YY', required: true },
         { name: 'cvv', label: 'CVV', type: 'password', placeholder: '123', required: true }
       ] }
+=======
+      { id: 'cod', name: 'Cash on Delivery', icon: 'bi-cash' },
+      { id: 'upi', name: 'UPI Payment', icon: 'bi-phone' },
+      { id: 'card', name: 'Credit/Debit Card', icon: 'bi-credit-card' }
+>>>>>>> 5ba752ec70e5bf635be34a52fd5c90363060ba46
     ];
     this.selectedShipping = 'standard';
     this.selectedPayment = 'cod';
@@ -593,6 +599,7 @@ class CheckoutSystem {
             </label>
           </div>
         </div>
+<<<<<<< HEAD
         <div class="payment-option-form mt-3" id="${method.id}-form" style="display: ${method.id === this.selectedPayment ? 'block' : 'none'}">
           ${method.fields.map(field => `
             <div class="mb-3">
@@ -603,6 +610,8 @@ class CheckoutSystem {
             </div>
           `).join('')}
         </div>
+=======
+>>>>>>> 5ba752ec70e5bf635be34a52fd5c90363060ba46
       </div>
     `).join('');
 
@@ -631,11 +640,14 @@ class CheckoutSystem {
     $(`.payment-option[data-id="${methodId}"]`).addClass('selected');
     $(`#payment-${methodId}`).prop('checked', true);
     
+<<<<<<< HEAD
     // Hide all payment forms first
     $('.payment-option-form').hide();
     // Show the selected payment method's form
     $(`#${methodId}-form`).show();
     
+=======
+>>>>>>> 5ba752ec70e5bf635be34a52fd5c90363060ba46
     // Update order summary
     this.updateOrderSummary();
   }
@@ -715,6 +727,7 @@ class CheckoutSystem {
     } else if (this.currentStep === 2) {
       // Validate shipping form
       const form = document.getElementById('shipping-form');
+<<<<<<< HEAD
       if (!form.checkValidity()) {
         form.classList.add('was-validated');
         return false;
@@ -748,6 +761,12 @@ class CheckoutSystem {
         }
       }
       return true;
+=======
+      return form.checkValidity();
+    } else if (this.currentStep === 3) {
+      // Validate payment selection
+      return true; // Payment method is pre-selected
+>>>>>>> 5ba752ec70e5bf635be34a52fd5c90363060ba46
     }
     return true;
   }
@@ -817,6 +836,7 @@ class CheckoutSystem {
   }
 
   placeOrder() {
+<<<<<<< HEAD
     // Get shipping form
     const shippingForm = document.getElementById('shipping-form');
     
@@ -850,3 +870,23 @@ class CheckoutSystem {
     this.updateOrderSummary();
   }
 }
+=======
+    // Show loading state
+    $('#placeOrderBtn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...');
+    
+    // Simulate order processing
+    setTimeout(() => {
+      // Clear cart
+      localStorage.removeItem('cart');
+      
+      // Show success message
+      this.showNotification('Your order has been placed successfully!');
+      
+      // Close checkout
+      this.closeCheckout();
+      
+      // Reset cart UI
+      if (typeof Cart !== 'undefined' && Cart.updateUI) {
+        Cart.updateUI();
+      }
+>>>>>>> 5ba752ec70e5bf635be34a52fd5c90363060ba46
